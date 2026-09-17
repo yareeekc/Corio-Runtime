@@ -31,7 +31,7 @@ Comment=CorIO RunTime Core $APP
 Exec=crt-lch $APP
 Terminal=false
 Type=Application
-Icon=$INSTALL_DIR/logo.ico
+Icon=$INSTALL_DIR/logo.png
 " > ~/.local/share/applications/$APP.desktop
 
 echo "Installed $APP"

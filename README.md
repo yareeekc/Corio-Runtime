@@ -27,6 +27,11 @@ Now CRT tested success on **Debian 13**, later will be added **Fedora**, **Arch*
 `cd your-project-dir`
 `zip -r ../yoru-app-name.core .`
 
+## App files
+Your .core-archive must have:
+1. index.html - main file
+2. logo.png   - app logo
+
 ## API
 ### Sending request
 CRT using port **6543** for API server, using in JS (f. e.):

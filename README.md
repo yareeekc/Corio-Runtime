@@ -8,6 +8,8 @@ Now CRT tested success on **Debian 13**, later will be added **Fedora**, **Arch*
 
 1. ## Install git
    Debian: `sudo apt update && sudo apt install -y git`
+   Fedora: `sudo dnf install -y git`
+   Arch: `sudo pacman -Sy --noconfirm git`
 2. Clone the repo
    `git clone https://github.com/yareeekc/Corio-Runtime.git && cd Corio-Runtime/`
 3. Start the installation script

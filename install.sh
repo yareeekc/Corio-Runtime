@@ -2,14 +2,71 @@
 set -e
 
 if [ "$(id -u)" -ne 0 ]; then
-   echo "Please, Run Script like Root: sudo ./install.sh"
-   exit 1
+	echo "Please, Run Script like Root: sudo ./install.sh"
+	exit 1
 fi
 
 echo "Installing CorIO RunTime (CRT) Host"
 echo ""
 
-apt update && apt install ncat chromium unzip -y
+. /etc/os-release
+echo "Detected distro: $PRETTY_NAME"
+
+case "$ID" in
+    debian|ubuntu|linuxmint|pop)
+        PACKAGE_MANAGER="apt"
+        PACKAGES="ncat chromium unzip"
+        ;;
+
+    fedora)
+        PACKAGE_MANAGER="dnf"
+        PACKAGES="nmap-ncat chromium unzip"
+        ;;
+
+    arch|manjaro|endeavouros)
+        PACKAGE_MANAGER="pacman"
+        PACKAGES="nmap chromium unzip"
+        ;;
+
+    *)
+        case "$ID_LIKE" in
+            *debian*)
+                PACKAGE_MANAGER="apt"
+                PACKAGES="ncat chromium unzip"
+                ;;
+
+            *fedora*)
+                PACKAGE_MANAGER="dnf"
+                PACKAGES="nmap-ncat chromium unzip"
+                ;;
+
+            *arch*)
+                PACKAGE_MANAGER="pacman"
+                PACKAGES="nmap chromium unzip"
+                ;;
+
+            *)
+                echo "ERROR: Unsupported Linux distribution: $ID"
+                exit 1
+                ;;
+        esac
+        ;;
+esac
+
+case "$PACKAGE_MANAGER" in
+	apt)
+		apt update
+		apt install -y $PACKAGES
+		;;
+
+	dnf)
+		dnf install -y $PACKAGES
+		;;
+
+	pacman)
+		pacman -Sy --noconfirm $PACKAGES
+		;;
+esac
 
 cp ./crt-api-server.sh /usr/bin/crt-host
 chmod +x /usr/bin/crt-host

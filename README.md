@@ -65,6 +65,10 @@ mkfile/file} create a new file, "file" is absolutely path to your file and it's 
 
 rmfile/file} remove the file, "file" is absolutely path to your file and it's name
 
+hostname }   get name of user's host
+
+whoami   }   get username
+
 # What's next?
 ## In plans are:
 Integration to the <a href="https://github.com/yareeekc/CorIO">**Corio Shell**</a>

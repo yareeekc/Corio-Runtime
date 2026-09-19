@@ -42,16 +42,27 @@ to get list of files in / device
 
 ### Basic API methods
 poweroff ╮
+
 reboot   }   Power management
+
 suspend  ╯
+
 ping     }   Check connect to API server, answer: "OK"
+
 os-info  }   `cat /etc/os-release`
+
 mkdir/dir}   Create a new directory, "dir" is absolutely path to your new directory
+
 rmdir/dir}   Remove the directory, "dir" is absolutely path to your directory
+
 ls/dir   }   list of files in currently directory, "dir" is absolutely path to your directory
+
 write/file}  writing text to the file, "file" is absolutely path to your file and it's name (f. e.: /etc/os-release)
+
 read/file}   reading text in the file, "file" is absolutely path to your file and it's name
+
 mkfile/file} create a new file, "file" is absolutely path to your file and it's name
+
 rmfile/file} remove the file, "file" is absolutely path to your file and it's name
 
 # What's next?

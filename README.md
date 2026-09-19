@@ -2,7 +2,7 @@
 
 **CRT** (Corio RunTime) lets you run the same applications (**Cores**) on any operating system without having to compile the app separately for each OS. It works by using different **Host** implementations
 
-Now CRT tested success on **Debian 13**, later will be added **Fedora**, **Arch**, **Windows** and **MacOS**
+Now CRT tested success on **Debian 13**, added **Fedora** and **Arch** support, later will be added **Windows** and **MacOS** support
 
 # Install
 

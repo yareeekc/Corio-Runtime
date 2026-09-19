@@ -37,8 +37,8 @@ Your .core-archive must have:
 ## API
 ### Sending request
 CRT using port **6543** for API server, using in JS (f. e.):
-`fetch('http://127.0.0.1:6543/suspend')`
-to suspend user's device
+`fetch('http://127.0.0.1:6543/ls/home/')`
+to get list of files in / device
 
 ### Basic API methods
 poweroff ╮

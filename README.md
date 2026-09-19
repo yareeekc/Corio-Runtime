@@ -69,6 +69,8 @@ hostname }   get name of user's host
 
 whoami   }   get username
 
+run-core/core}Run Core **EXPERIMENTAL!**
+
 # What's next?
 ## In plans are:
 Integration to the <a href="https://github.com/yareeekc/CorIO">**Corio Shell**</a>

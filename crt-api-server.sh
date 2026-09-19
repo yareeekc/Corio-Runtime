@@ -83,6 +83,16 @@ if [ "$1" == "--run-request" ]; then
         whoami
     elif echo "$REQUEST_LINE" | grep -q 'hostname'; then
         hostname
+    elif echo "$REQUEST_LINE" | grep -q 'run-core'; then
+        CORE=$(echo "$REQUEST_LINE" | sed -n 's#^GET /run-core/\([^ ]*\).*#\1#p')
+
+        if [ -z "$CORE" ]; then
+            echo "ERROR: Core name is empty"
+        elif crt-lch -- "$CORE"; then
+            echo "OK"
+        else
+            echo "ERROR: failed to run Core"
+        fi
     else
         echo "uncnown command"
     fi

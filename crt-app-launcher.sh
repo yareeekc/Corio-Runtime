@@ -18,14 +18,26 @@ sleep 0.2
 case "$ID" in
     debian|ubuntu|linuxmint|pop|arch|manjaro|endeavour)
         chromium --app="file:///$APP_DIR/index.html"
+        ;;
+        
     fedora)
         chromium-browser --app="file:///$APP_DIR/index.html"
+        ;;
+        
     *)
         case "$ID_LIKE" in
             debian|ubuntu|linuxmint|pop|arch|manjaro|endeavour)
                 chromium --app="file:///$APP_DIR/index.html"
+                ;;
+                
             fedora)
                 chromium --app="file:///$APP_DIR/index.html"
+                ;;
+                
             *)
                 chromium --app="file:///$APP_DIR/index.html"
                 chromium-browser -app="file:///$APP_DIR/index.html"
+                ;;
+    esac
+    ;;
+esac

@@ -87,4 +87,4 @@ fi
 
 echo 'Corio RunTime Client HTTP Server Started on Port 6543'
 
-ncat -l -k -s 127.0.0.1 6543 -c "$0 --run-request"
+ncat -l -k 127.0.0.1 6543 -c "$0 --run-request"
